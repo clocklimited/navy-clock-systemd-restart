@@ -14,7 +14,10 @@ module.exports = function clockRestart() {
   }
 
   function getStepList() {
-    return Object.keys(steps)
+    return [
+      'init'
+    , { name: 'restart', parallel: false, delay: 30 }
+    ]
   }
 
   function init(context, callback) {

@@ -14,7 +14,7 @@ describe('clock-restart', function () {
     var stepList = clockRestart.getStepList()
     stepList.length.should.equal(2)
     stepList[0].should.equal('init')
-    stepList[1].should.equal('restart')
+    assert.deepEqual(stepList[1], { name: 'restart', parallel: false, delay: 30 })
   })
 
   it('should run the init function', function (done) {

@@ -11,7 +11,7 @@ describe('Systemd', function () {
         'since Wed 2017-05-31 09:50:48 UTC; 6min ago\n'
 
       createSystemd.__set__('exec', function (c, cb) {
-        assert.equal(c, 'sudo systemctl --no-pager status node-bba-site-staging-admin')
+        assert.equal(c, 'sudo systemctl status node-bba-site-staging-admin')
         cb(null, output)
       })
 
@@ -30,7 +30,7 @@ describe('Systemd', function () {
         'Wed 2017-05-31 09:50:30 UTC; 9s ago\n'
 
       createSystemd.__set__('exec', function (c, cb) {
-        assert.equal(c, 'sudo systemctl --no-pager status node-bba-site-staging-admin')
+        assert.equal(c, 'sudo systemctl status node-bba-site-staging-admin')
         cb(null, output)
       })
 
